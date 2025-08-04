@@ -1,7 +1,9 @@
 package slidingWindow;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SlidingWindowUtil {
   public static int getSumMaxValueWindow(List<Integer> list, int subListSize) {
@@ -42,4 +44,31 @@ public class SlidingWindowUtil {
 
     return averageSubListResult;
   }
+
+  public static int lengthOfLongestSubstring(String s) {
+    if (s == null) {
+      throw new IllegalArgumentException("String cannot be null.");
+    }
+    if (s.isEmpty()) {
+      return 0;
+    }
+
+    int maxLength = 0;
+    int left = 0;
+
+    Map<Character, Integer> lastSeen = new HashMap<>();
+
+    for (int right = 0; right < s.length(); right++) {
+      char currentChar = s.charAt(right);
+
+      if (lastSeen.containsKey(currentChar)) {
+        left = Math.max(left, lastSeen.get(currentChar) + 1);
+      }
+
+      lastSeen.put(currentChar, right);
+      maxLength = Math.max(maxLength, right - left + 1);
+    }
+    return maxLength;
+  }
+
 }

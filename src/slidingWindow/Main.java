@@ -15,5 +15,10 @@ public class Main {
     int k2 = 3;
     List<Double> resultAvgSubList = SlidingWindowUtil.getAverageSubListWindow(listAvg, k2);
     System.out.println("Sliding window avg -> " + resultAvgSubList);
+
+    // Length Of Longest Substring
+    String stringTest = "abcdeabcdefg";
+    int resultOfLongestSubstring = SlidingWindowUtil.lengthOfLongestSubstring(stringTest);
+    System.out.println("Length Of Longest Substring -> " + resultOfLongestSubstring);
   }
 }
