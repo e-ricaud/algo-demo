@@ -20,5 +20,20 @@ public class Main {
     String stringTest = "abcdeabcdefg";
     int resultOfLongestSubstring = SlidingWindowUtil.lengthOfLongestSubstring(stringTest);
     System.out.println("Length Of Longest Substring -> " + resultOfLongestSubstring);
+
+    // Count Valid Window
+    List<Integer> nums = List.of(1, 2, 1, 1, 3, 1, 2);
+    int windowSize = 3;
+    int k = 6;
+    int resValidWindow = SlidingWindowUtil.countValidWindows(nums, windowSize, k);
+    System.out.println("Count Valid Window -> " + resValidWindow);
+
+    // Sliding windows max
+    List<Integer> resWindowMax = SlidingWindowUtil.slidingWindowMax(List.of(1, 3, -1, -3, 5, 3, 6, 7), 3);
+    System.out.println("Sliding Window max -> " + resWindowMax);
+
+    // Length of longest Substring K Distinct
+    System.out.println("Length of longest Substring K Distinct -> " + SlidingWindowUtil.lengthOfLongestSubstringKDistinct("abcabcabc", 3));
+
   }
 }
